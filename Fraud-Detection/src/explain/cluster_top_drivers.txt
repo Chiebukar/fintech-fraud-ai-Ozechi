@@ -1,0 +1,26 @@
+Cluster 0 TOP +
+  txn_count: z=0.62
+  day_of_week_switches: z=0.61
+  location_switches: z=0.61
+  day_of_week_unique_count: z=0.59
+  day_of_week_entropy: z=0.57
+Cluster 0 TOP -
+  day_of_week_mode_frac: z=-0.42
+  intertxn_mean_s: z=-0.37
+  intertxn_max_s: z=-0.35
+  intertxn_median_s: z=-0.34
+  intertxn_std_s: z=-0.34
+
+Cluster 1 TOP +
+  day_of_week_mode_frac: z=0.61
+  intertxn_mean_s: z=0.54
+  intertxn_max_s: z=0.51
+  intertxn_median_s: z=0.50
+  intertxn_std_s: z=0.50
+Cluster 1 TOP -
+  txn_count: z=-0.90
+  day_of_week_switches: z=-0.89
+  location_switches: z=-0.89
+  day_of_week_unique_count: z=-0.86
+  day_of_week_entropy: z=-0.84
+
