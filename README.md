@@ -119,10 +119,11 @@ Launch the interactive fraud dashboard:
 ```bash
 streamlit run streamlit_app.py
 ```
+Use the app: [Fraud-Detector](https://fintech-fraud-ai-ozechi.streamlit.app/)
 
 ---
 
-## 📌 Assumptions and Limitations
+## Assumptions and Limitations
 
 * Synthetic dataset (1,000 samples) may not reflect real-world fraud complexity.
 * Temporal leakage risks are mitigated with proper splits, but real-time drift must be monitored.
