@@ -1,4 +1,4 @@
-# Fraud Detection in FinTech Transactions
+# [Fraud Detection in FinTech Transactions](https://fintech-fraud-ai-ozechi.streamlit.app/)
 
 ## Project Overview
 
