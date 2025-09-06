@@ -142,7 +142,7 @@ Use the deployed app: [Fraud-Detector](https://fintech-fraud-ai-ozechi-0.streaml
 
 ## Assumptions and Limitations
 
-* Synthetic dataset (1,000 samples) may not reflect real-world fraud complexity.
+* Dataset (1,000 samples) may not reflect real-world fraud complexity.
 * Temporal leakage risks are mitigated with proper splits, but real-time drift must be monitored.
 * Model assumes features provided at transaction time — some external signals (e.g., IP data, network graph features) not included.
 
