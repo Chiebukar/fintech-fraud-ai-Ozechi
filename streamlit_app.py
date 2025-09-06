@@ -16,6 +16,7 @@ from pathlib import Path
 import json
 import random
 from datetime import datetime, timedelta
+import time
 
 import pandas as pd
 import streamlit as st
