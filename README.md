@@ -1,4 +1,4 @@
-# [Fraud Detection in Transactions](https://fintech-fraud-ai-ozechi-0.streamlit.app/))
+# [Fraud Detection in Transactions](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
 
 ## Project Overview
 
@@ -96,7 +96,7 @@ Run the scoring script on new transaction data:
 python3 ./src/utils/score.py
 ```
 
-### 4Run the Flask API
+### Run the Flask API
 
 Start the fraud detection API service:
 
@@ -119,7 +119,7 @@ Launch the interactive fraud dashboard:
 ```bash
 streamlit run streamlit_app.py
 ```
-Use the app: [Fraud-Detector](https://fintech-fraud-ai-ozechi.streamlit.app/)
+Use the deployed app: [Fraud-Detector]((https://fintech-fraud-ai-ozechi-0.streamlit.app/))
 
 ---
 
