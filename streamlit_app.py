@@ -228,7 +228,9 @@ if st.session_state.get("score_now", False):
     st.info("Scoring...........")
 
     try:
-        pred, prob = score_transaction(new_tx_df)  # uses default history and pipeline path inside your score.py
+        start_time = time.time()  # start timing
+        pred, prob = score_transaction(new_tx_df)  # call the scoring function
+        elapsed = time.time() - start_time  # end timing
     except Exception as e:
         st.error(f"Scoring failed: {e}")
     else:
@@ -243,15 +245,16 @@ if st.session_state.get("score_now", False):
             label_color = "🔴" if pred == 1 else "🟢"
             st.markdown(f"### {label_color} {label_text}")
             st.metric("Fraud probability", f"{prob_pct:.2f} %")
+            st.metric("Scoring time", f"{elapsed:.3f} seconds")  # ⏱️ show timing here
         with rcol2:
             st.markdown("#### Probability gauge")
-            # Simple horizontal bar using st.progress (0-1)
             st.progress(min(max(float(prob), 0.0), 1.0))
 
         # More details
         with st.expander("Show full model output / details"):
             st.write("Prediction label:", pred)
             st.write("Fraud probability (float 0-1):", float(prob))
+            st.write("Scoring time (seconds):", round(elapsed, 3))
             st.json(preview_tx)
 
     # optional: append to session history
