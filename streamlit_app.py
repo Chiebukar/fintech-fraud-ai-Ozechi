@@ -6,8 +6,8 @@ Usage:
     streamlit run streamlit_app.py
 
 Assumes:
-- score.predict(...) function available at src/utils/score.py
-- The predict(...) function takes a pandas DataFrame containing a single transaction
+- score.score(...) function available at src/utils/score.py
+- The score(...) function takes a pandas DataFrame containing a single transaction
   and returns (prediction:int, probability:float)
 """
 
