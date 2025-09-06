@@ -224,7 +224,7 @@ if st.session_state.get("score_now", False):
     # Build dataframe expected by score.score()
     new_tx_df = pd.DataFrame([preview_tx])
 
-    st.info("Scoring... this may take a moment (pipeline & model load).")
+    st.info("Scoring...........")
 
     try:
         pred, prob = score_transaction(new_tx_df)  # uses default history and pipeline path inside your score.py
