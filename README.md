@@ -112,14 +112,14 @@ POST http://localhost:5000/score
 
 Body: JSON transaction record → Returns fraud probability & class.
 
-### 5️⃣ Run the Streamlit App
+### Run the Streamlit App
 
 Launch the interactive fraud dashboard:
 
 ```bash
 streamlit run streamlit_app.py
 ```
-Use the deployed app: [Fraud-Detector]((https://fintech-fraud-ai-ozechi-0.streamlit.app/))
+Use the deployed app: [Fraud-Detector](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
 
 ---
 
