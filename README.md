@@ -149,6 +149,42 @@ curl -X POST http://localhost:5000/predict \
         "risk_score": 2.5
       }'
 ```
+or from another python service using the requests library
+
+```python
+import requests
+
+# Flask API endpoint
+url = "http://localhost:5000/predict"
+
+# Example transaction payload
+transaction = {
+    "transaction_id": "T123",
+    "customer_id": "CUST1092",
+    "transaction_amount": 200,
+    "transaction_time": "2025-09-04 12:30:00",
+    "device_type": "Mobile",
+    "location": "Lagos",
+    "transaction_type": "Transfer",
+    "is_foreign_transaction": 0,
+    "previous_fraud_flag": 0,
+    "is_high_risk_country": 0,
+    "day_of_week": "Fri",
+    "time_of_day": "Afternoon",
+    "risk_score": 2.5
+}
+
+# Send POST request to the API
+response = requests.post(url, json=transaction)
+
+# Parse and print results
+if response.ok:
+    result = response.json()
+    print("Prediction:", result["prediction"])            # 0 = Not Fraud, 1 = Fraud
+    print("Fraud Probability:", result["fraud_probability"])
+else:
+    print("Error:", response.status_code, response.text)
+```
 
 ### Run the Streamlit App
 
