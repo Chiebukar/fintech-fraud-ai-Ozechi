@@ -2,18 +2,18 @@
 
 ## Project Overview
 
-This project focuses on building an **AI-powered fraud detection system** for fintech transaction data. The pipeline utilizes **data preprocessing, feature engineering, imbalance handling, model development, explainability (SHAP), and deployment (API + Streamlit app)**. The aim is to build a production-grade solution that not only detects fraud but also provides interpretability and business insights. See the web app here: [Fintech-Fraud-Detection-App](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
+This project focuses on building an **AI-powered fraud detection system** for fintech transaction data. The pipeline utilizes **data preprocessing, feature engineering, imbalance handling, model development, explainability (SHAP), and deployment (API + Streamlit app)**. The aim is to provide a production-grade solution that detects fraudulent transactions. See the web app here: [Fintech-Fraud-Detection-App](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
 
 ---
 
 ## Data Understanding and Preprocessing
 
-* Dataset: **1,000 synthetic fintech transactions** with 14 features (transaction details, customer IDs, device/location, and risk indicators).
+* Dataset: **1,000 transactions** with 14 features (transaction details, customer IDs, device/location, and risk indicators).
 * Data checks included:
 
   * No missing values, no duplicates
   * Temporal coverage: Jan 1, 2024 – Feb 11, 2024
-  * Categorical variables encoded (`customer_id`, `transaction_type`, etc.)
+  * Categorical variables encoded 
   * Numerical variables standardized
 
 ---
@@ -41,11 +41,12 @@ This project focuses on building an **AI-powered fraud detection system** for fi
 
 ---
 
-## Temporal Analysis Results
+## Analysis Results
 
+* Risk score, transaction amount, and foreign transaction are major predictors of Fraud.
 * No clear impact of temporal difference on Fraud patterns.
-* Device and location switches within **minutes** raise fraud likelihood.
-* Temporal splits (80/20) ensured realistic training/testing.
+* Device and location switches contribute little to fraud likelihood.
+* Temporal splits (80/20) ensured realistic training/testing (avoid data leakages).
 
 ---
 
@@ -57,7 +58,7 @@ This project focuses on building an **AI-powered fraud detection system** for fi
 
 ---
 
-## 🔍 Explainability Insights
+## Explainability Insights
 
 Using **SHAP values**:
 
@@ -68,16 +69,31 @@ Using **SHAP values**:
   * `is_foreign_transaction` (foreign = higher fraud probability)
 * Behavioral anomalies (`recency_ratio`, `switch features`) also influenced predictions.
 * Local SHAP plots provided **instance-level explanations** to justify alerts.
+* Explainability confirm insights from exploratory analysis
 
 ---
 
-## Deployment Instructions
+## Prerequisites
+
+- Python **3.9**, **3.10**, or **3.11**  
+- Git is installed on your system  
+- Recommended: virtual environment (venv or conda) to isolate dependencies
+
+## Instructions
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Chiebukar/AI_Egineer_Assessment.git
-cd fraud-detection
+git clone https://github.com/Chiebukar/fintech-fraud-ai-Ozechi.git
+cd fintech-fraud-ai-Ozechi
+```
+### Setup Environment
+
+Before training the model, create a new virtual environment and install dependencies from `requirements.txt`.
+
+**Linux / MacOS:**
+```bash
+python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 ```
 
 ### Train the Model
