@@ -6,9 +6,8 @@ Usage:
     streamlit run streamlit_app.py
 
 Assumes:
-- ./src/data/distinct_feature_values.json exists (produced by your util)
-- score.score(...) function available at src/utils/score.py
-- The score(...) function takes a pandas DataFrame containing a single transaction
+- score.predict(...) function available at src/utils/score.py
+- The predict(...) function takes a pandas DataFrame containing a single transaction
   and returns (prediction:int, probability:float)
 """
 
@@ -31,7 +30,7 @@ if SYS_PATH_INSERT not in sys.path:
 try:
     from score import score as score_transaction  # score(new_tx: pd.DataFrame) -> (pred, prob)
 except Exception as e:
-    st.error(f"Could not import score.score(). Make sure src/utils is on PYTHONPATH. Error: {e}")
+    st.error(f"Could not import score.score(). Error: {e}")
     raise
 
 # ---- constants / defaults ----
