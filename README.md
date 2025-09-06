@@ -124,10 +124,31 @@ python3 server.py
 Endpoint available at:
 
 ```http
-POST http://localhost:5000/score
+POST http://localhost:5000/predict
 ```
 
 Body: JSON transaction record → Returns fraud probability & class.
+
+Example request:
+```bash
+curl -X POST http://localhost:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+        "transaction_id": "T123",
+        "customer_id": "CUST1092",
+        "transaction_amount": 200,
+        "transaction_time": "2025-09-04 12:30:00",
+        "device_type": "Mobile",
+        "location": "Lagos",
+        "transaction_type": "Transfer",
+        "is_foreign_transaction": 0,
+        "previous_fraud_flag": 0,
+        "is_high_risk_country": 0,
+        "day_of_week": "Fri",
+        "time_of_day": "Afternoon",
+        "risk_score": 2.5
+      }'
+```
 
 ### Run the Streamlit App
 
@@ -136,7 +157,7 @@ Launch the interactive fraud dashboard:
 ```bash
 streamlit run streamlit_app.py
 ```
-Use the deployed app: [Fraud-Detector](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
+Or use the deployed online web app: [Fraud-Detector](https://fintech-fraud-ai-ozechi-0.streamlit.app/)
 
 ---
 
