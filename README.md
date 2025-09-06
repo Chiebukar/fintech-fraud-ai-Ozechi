@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project focuses on building an **AI-powered fraud detection system** for fintech transaction data. The pipeline spans **data preprocessing, feature engineering, imbalance handling, model development, explainability (SHAP), and deployment (API + Streamlit app)**. The aim is to build a production-grade solution that not only detects fraud but also provides interpretability and business insights.
+This project focuses on building an **AI-powered fraud detection system** for fintech transaction data. The pipeline utilizes **data preprocessing, feature engineering, imbalance handling, model development, explainability (SHAP), and deployment (API + Streamlit app)**. The aim is to build a production-grade solution that not only detects fraud but also provides interpretability and business insights. See the web app here: [Fintech-Fraud-Detection-App]((https://fintech-fraud-ai-ozechi-0.streamlit.app/))
 
 ---
 
