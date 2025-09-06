@@ -278,4 +278,4 @@ if st.session_state.get("transactions_scored"):
 
 # footer
 st.markdown("---")
-st.caption("Streamlit UI • Fraud detection demo • powered by your trained pipeline")
+st.caption("Streamlit UI • Fraud detection demo • powered by the trained pipeline")
