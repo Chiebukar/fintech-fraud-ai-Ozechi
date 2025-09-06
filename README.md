@@ -69,7 +69,7 @@ Using **SHAP values**:
   * `is_foreign_transaction` (foreign = higher fraud probability)
 * Behavioral anomalies (`recency_ratio`, `switch features`) also influenced predictions.
 * Local SHAP plots provided **instance-level explanations** to justify alerts.
-* Explainability confirm insights from exploratory analysis
+* Explainability confirms insights from exploratory analysis
 
 ---
 
@@ -106,11 +106,12 @@ python3 ./src/utils/train.py
 
 ### Score Transactions
 
-Run the scoring script on new transaction data:
+Run the predict script on new transaction data:
 
 ```bash
-python3 ./src/utils/score.py
+python3 ./src/utils/predict.py --input ./src/data/new_sample.xlsx
 ```
+Replace `./src/data/new_sample.xlsx` with path to excel file of new transaction data
 
 ### Run the Flask API
 
