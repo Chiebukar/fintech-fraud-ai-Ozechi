@@ -188,7 +188,7 @@ else:
 
 ### Run the Streamlit App
 
-Launch the interactive fraud dashboard:
+Launch the interactive fraud detection dashboard:
 
 ```bash
 streamlit run streamlit_app.py
