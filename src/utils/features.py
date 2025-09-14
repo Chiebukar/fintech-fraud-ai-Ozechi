@@ -189,7 +189,7 @@ class RecencyRatioTransformer(TransformerMixin, BaseEstimator):
         )
 
         df["recency_ratio"] = df["rolling3_time"] / df["avg_time_nonfraud"]
-        df["recency_ratio"] = df["recency_ratio"].replace([np.inf, -np.inf], 1.0).fillna(1.0)
+        df["recency_ratio"] = df["recency_ratio"].replace([np.inf, -np.inf], 1.0).fillna(1.0) # New users → 1.0
 
         return df
 
@@ -235,7 +235,7 @@ class AmountRelativeToHistoryTransformer(TransformerMixin, BaseEstimator):
         def per_user(group):
             mask = group[self.label_col] == 0
             if mask.sum() == 0:  # new customer
-                return pd.Series(group[self.amount_col], index=group.index)
+                return pd.Series(group[self.amount_col], index=group.index) # New customer → use own amount
 
             past_mean = group.loc[mask, self.amount_col].expanding().mean().shift()
             past_mean = past_mean.reindex(group.index)
