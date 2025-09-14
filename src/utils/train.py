@@ -5,13 +5,14 @@ import numpy as np
 import joblib
 from pathlib import Path
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline                          # Build reproducible ML workflows
+from sklearn.compose import ColumnTransformer                  # Combine preprocessing steps
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder, OrdinalEncoder
 from sklearn.metrics import log_loss
 from sklearn.utils.class_weight import compute_sample_weight
 from utils import extract_and_save_distinct_values
 
+                              
 print("Importing custom transformers...")
 # Import custom transformers
 from features import (
