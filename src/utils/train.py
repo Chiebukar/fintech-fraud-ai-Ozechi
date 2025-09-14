@@ -141,11 +141,11 @@ y_tr, y_val = y.iloc[:split_idx], y.iloc[split_idx:]
 w_tr, w_val = final_weights[:split_idx], final_weights[split_idx:]
 
 gb_model = GradientBoostingClassifier(
-    n_estimators=1000,
-    learning_rate=0.05,
+    n_estimators=171,
+    learning_rate=0.08,
     max_depth=3,
-    min_samples_leaf=50,
-    subsample=0.8,
+    min_samples_leaf=20,
+    subsample=0.87,
     random_state=42,
 )
 
