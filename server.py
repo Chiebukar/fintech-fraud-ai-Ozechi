@@ -11,8 +11,8 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from pathlib import Path
 import sys
-sys.path.append(str(Path(__file__).parent / "src" / "utils")) # Add src/utils to Python path
-from score import score # Now you can import score
+sys.path.append(str(Path(__file__).parent / "src" / "utils")) # Adds src/utils to Python path
+from score import score 
 
 # ------------------------
 # Config
